@@ -14,6 +14,10 @@ app.use(helmet())
 
 // tối ưu đc băng thông của payload
 app.use(compression())
+app.use(express.json())
+app.use(express.urlencoded({
+    extended: true
+}))
 // init db
 require('./dbs/init.mongdb')
 // const { checkOverload } = require('./helpers/check.connect')
